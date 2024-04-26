@@ -1,0 +1,74 @@
+[
+    {
+        "id": "dJ3pKDfnEJhEOFJULvhs",
+        "locationId": "Yj0B8PqpPjBZBwD91Lgq",
+        "contactName": "anna krush",
+        "firstName": "anna",
+        "lastName": "krush",
+        "companyName": null,
+        "email": "info@humanoco.com",
+        "phone": "+18449000770",
+        "dnd": false,
+        "dndSettings": {},
+        "type": "lead",
+        "source": null,
+        "assignedTo": null,
+        "city": null,
+        "state": null,
+        "postalCode": null,
+        "address1": null,
+        "dateAdded": "2024-04-25T10:40:46.878Z",
+        "dateUpdated": "2024-04-25T10:40:46.878Z",
+        "dateOfBirth": null,
+        "businessId": null,
+        "tags": [],
+        "followers": [],
+        "country": "US",
+        "website": null,
+        "additionalEmails": [],
+        "attributions": [
+            {
+                "utmSessionSource": "CRM UI",
+                "medium": "manual",
+                "isFirst": true
+            }
+        ],
+        "customFields": []
+    },
+    {
+        "id": "qgptsVHCfguGnBub8GLk",
+        "locationId": "Yj0B8PqpPjBZBwD91Lgq",
+        "contactName": "egor yasinetskiy",
+        "firstName": "egor",
+        "lastName": "yasinetskiy",
+        "companyName": null,
+        "email": "kkk@example.com",
+        "phone": "+19012375438",
+        "dnd": false,
+        "dndSettings": {},
+        "type": "lead",
+        "source": null,
+        "assignedTo": null,
+        "city": null,
+        "state": null,
+        "postalCode": null,
+        "address1": null,
+        "dateAdded": "2024-04-25T10:39:15.383Z",
+        "dateUpdated": "2024-04-25T14:09:11.176Z",
+        "dateOfBirth": null,
+        "businessId": null,
+        "tags": [],
+        "followers": [],
+        "country": "US",
+        "website": null,
+        "additionalEmails": [],
+        "attributions": [
+            {
+                "utmSessionSource": "CRM UI",
+                "isFirst": true,
+                "medium": "manual"
+            }
+        ],
+        "customFields": []
+    }
+]
