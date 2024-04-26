@@ -26,6 +26,7 @@ load_dotenv()
 
 API_KEY = os.getenv("TELNYX_API_KEY")
 PUBLIC_KEY = os.getenv("TELNYX_PUBLIC_KEY")
+failed_contacts = []
 
 
 def check_telnyx_delivery_status(message_id):
@@ -142,7 +143,8 @@ def main(input_file, output_file):
             contact["telnyx_sent_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             contact["telnyx_message_id"] = message_id
 
-            ghl_sent_status = ghl_api.send_sms_ghl(contact_id, msg)
+            ghl_sent_status = ghl_api.modify_ghl_conversation(contact_id, msg)
+
             if ghl_sent_status:
                 contact["ghl_sent"] = True
                 contact["ghl_sent_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -150,6 +152,12 @@ def main(input_file, output_file):
             with open(output_file, "w") as f:
                 json.dump(raw_data, f, indent=4)
                 logger.info(f"{main.__name__} -- DATA DUMPED SUCCESSFULLY")
+
+        else:
+            failed_contacts.append(contact)
+
+    with open("contacts/failed_contact", "w") as f:
+        json.dump(failed_contacts, f, indent=4)
 
 
 if __name__ == "__main__":

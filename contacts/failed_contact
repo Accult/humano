@@ -1,0 +1,43 @@
+[
+    {
+        "id": "1oDVofm7rAPBgNfgcp0L",
+        "locationId": "Yj0B8PqpPjBZBwD91Lgq",
+        "contactName": "smth smth",
+        "firstName": "smth",
+        "lastName": "smth",
+        "companyName": null,
+        "email": "kkllk@example.com",
+        "phone": null,
+        "dnd": false,
+        "dndSettings": {},
+        "type": "lead",
+        "source": null,
+        "assignedTo": null,
+        "city": null,
+        "state": null,
+        "postalCode": null,
+        "address1": null,
+        "dateAdded": "2024-04-26T08:14:12.913Z",
+        "dateUpdated": "2024-04-26T08:14:12.913Z",
+        "dateOfBirth": null,
+        "businessId": null,
+        "tags": [],
+        "followers": [],
+        "country": "US",
+        "website": null,
+        "additionalEmails": [],
+        "attributions": [
+            {
+                "utmSessionSource": "CRM UI",
+                "medium": "manual",
+                "isFirst": true
+            }
+        ],
+        "customFields": [],
+        "telnyx_sent": false,
+        "telnyx_sent_at": 0,
+        "telnyx_message_id": null,
+        "ghl_sent": false,
+        "ghl_sent_at": 0
+    }
+]
