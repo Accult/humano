@@ -1,7 +1,9 @@
-from flask import Flask
+from flask import Flask, request
 import ghl_api
 
 app = Flask(__name__)
+
+
 #
 # {'contacts': [{'id': 'qgptsVHCfguGnBub8GLk', 'locationId': 'Yj0B8PqpPjBZBwD91Lgq', 'contactName': 'egor yasinetskiy',
 #                'firstName': 'egor', 'lastName': 'yasinetskiy', 'companyName': None, 'email': 'kkk@example.com',
@@ -21,7 +23,7 @@ app = Flask(__name__)
 @app.route("/api/v1/telnyx-response", methods=["POST"])
 def webhook():
     # Отримуємо дані з вебхуку
-    # data = request.json
+    data = request.json
     data = [
         {
             "data": {
@@ -76,7 +78,5 @@ def webhook():
     return "ERROR"
 
 
-webhook()
-
-# if __name__ == "__main__":
-#     app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)
