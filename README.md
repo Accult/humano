@@ -10,10 +10,12 @@ git clone <repository_url>
 cd <project_directory>
 ```
 
-2. Execute the automation script:
+2. Create virtual environment and install all required packages:
 
 ```bash
-bash automation_script.sh
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
 ```
 
 This will set up the virtual environment, install required packages, create the `.env` using .env-example template
