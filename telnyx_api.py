@@ -145,7 +145,7 @@ def main(input_file, output_file):
             contact["telnyx_sent_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             contact["telnyx_message_id"] = message_id
 
-            ghl_sent_status, ghl_conversation_id = ghl_api.modify_ghl_conversation(contact_id, msg)
+            ghl_sent_status, ghl_conversation_id = ghl_api.modify_ghl_conversation(contact_id, msg, "outbound")
 
             if ghl_sent_status:
                 contact["ghl_sent"] = True
@@ -165,5 +165,4 @@ def main(input_file, output_file):
 
 if __name__ == "__main__":
     # main("contacts/data.json", "contacts/output_file")
-
     check_telnyx_delivery_status("40318f1a-b5a4-4515-8a01-dd85c7b23a46")

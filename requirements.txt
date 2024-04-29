@@ -1,3 +1,4 @@
 phonenumbers==8.13.35
 python-dotenv==1.0.1
 requests==2.31.0
+flask==3.0.3

@@ -1,29 +1,13 @@
-from flask import Flask, request
+from flask import Flask
 import ghl_api
 
 app = Flask(__name__)
 
 
-#
-# {'contacts': [{'id': 'qgptsVHCfguGnBub8GLk', 'locationId': 'Yj0B8PqpPjBZBwD91Lgq', 'contactName': 'egor yasinetskiy',
-#                'firstName': 'egor', 'lastName': 'yasinetskiy', 'companyName': None, 'email': 'kkk@example.com',
-#                'phone': '+19012375438', 'dnd': False, 'dndSettings': {}, 'type': 'lead', 'source': None,
-#                'assignedTo': None, 'city': None, 'state': None, 'postalCode': None, 'address1': None,
-#                'dateAdded': '2024-04-25T10:39:15.383Z', 'dateUpdated': '2024-04-25T14:09:11.176Z', 'dateOfBirth': None,
-#                'businessId': None, 'tags': [], 'followers': [], 'country': 'US', 'website': None,
-#                'additionalEmails': [],
-#                'attributions': [{'utmSessionSource': 'CRM UI', 'isFirst': True, 'medium': 'manual'}],
-#                'customFields': []}], 'meta': {'total': 1,
-#                                               'nextPageUrl': 'https://services.leadconnectorhq.com/contacts/?query=%2B19012375438&locationId=Yj0B8PqpPjBZBwD91Lgq&startAfter=1714041555383&startAfterId=qgptsVHCfguGnBub8GLk',
-#                                               'startAfterId': 'qgptsVHCfguGnBub8GLk', 'startAfter': 1714041555383,
-#                                               'currentPage': 1, 'nextPage': '', 'prevPage': None},
-#  'traceId': '02571e21-808a-4fea-947c-1e041984749a'}
-
-
 @app.route("/api/v1/telnyx-response", methods=["POST"])
 def webhook():
     # Отримуємо дані з вебхуку
-    data = request.json
+    # data = request.json
     data = [
         {
             "data": {
@@ -47,7 +31,7 @@ def webhook():
                     "record_type": "message",
                     "sent_at": "2024-04-29T10:17:42.552+00:00",
                     "tags": [],
-                    "text": "Lol",
+                    "text": "Hi, nice to meet you!",
                     "to": [
                         {
                             "carrier": "TELNYX LLC",
@@ -72,7 +56,7 @@ def webhook():
     ghl_api.tokens_update()
     ghl_contact_id = ghl_api.get_contact_by_number(sender_phone)
     if ghl_contact_id:
-        ghl_api.modify_ghl_conversation(ghl_contact_id, message)
+        ghl_api.modify_ghl_conversation(ghl_contact_id, message, "outbound")
         return "OK", 200
 
     return "ERROR"

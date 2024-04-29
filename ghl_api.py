@@ -114,7 +114,7 @@ def create_conversation(ghl_contact_id):
     return result
 
 
-def add_inbound_message(ghl_conversation_id, message_text):
+def add_inbound_message(ghl_conversation_id, message_text, direction):
     """
     creates inbound Message in a Conversation for a provided Contact ID
     """
@@ -131,7 +131,7 @@ def add_inbound_message(ghl_conversation_id, message_text):
             "type": "SMS",
             "conversationId": f"{ghl_conversation_id}",
             "message": f"{message_text}",
-            "direction": "inbound",
+            "direction": direction,
         },
     )
 
@@ -151,7 +151,7 @@ def add_inbound_message(ghl_conversation_id, message_text):
     return result, ghl_conversation_id
 
 
-def modify_ghl_conversation(contact_id, sms_message):
+def modify_ghl_conversation(contact_id, sms_message, direction):
     """
     handles Conversation modification for a provided Contact ID
     by defining whether provided Contact has a Conversation
@@ -166,7 +166,7 @@ def modify_ghl_conversation(contact_id, sms_message):
         conversation_id = get_conversation_response["conversation_id"]
 
         # return True if add_inbound_message(conversation_id, sms_message) is True else False
-        return add_inbound_message(conversation_id, sms_message)
+        return add_inbound_message(conversation_id, sms_message, direction)
 
     else:
         create_conversation_response = create_conversation(contact_id)
@@ -176,7 +176,7 @@ def modify_ghl_conversation(contact_id, sms_message):
             conversation_id = create_conversation_response["conversation_id"]
 
             # return True if add_inbound_message(conversation_id, sms_message) is True else False
-            return add_inbound_message(conversation_id, sms_message)
+            return add_inbound_message(conversation_id, sms_message, direction)
 
 
 def set_ghl_sms_blast_status(contact_id: str, status: str):
