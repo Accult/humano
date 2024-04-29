@@ -17,6 +17,33 @@ API_KEY = os.getenv("API_KEY")
 limit_amount_of_users = 100
 
 
+def get_contact_by_number(phone_number):
+    """
+    search contact in ghl by phone number
+    :param phone_number:
+    :return:
+    """
+
+    response = requests.get(
+        "https://services.leadconnectorhq.com/contacts/",
+        params={"query": phone_number, "locationId": LOCATION_ID},
+        headers={
+            "locationId": LOCATION_ID,
+            "Authorization": f"Bearer {TOKEN}",
+            # "Authorization": f"Bearer {API_KEY}",
+            "Version": api_version,
+        },
+    )
+    result = response.json()
+    print(result)
+    if result["contacts"]:
+        first_contact = result["contacts"][0]
+        if "id" in first_contact:
+            return first_contact["id"]
+    else:
+        return False
+
+
 def get_conversations(ghl_contact_id):
     """
     searches for Conversations by Contact ID and returns an Conversation object
@@ -220,6 +247,11 @@ def send_sms_ghl(contact_id: str, message: str):
 
 
 def update_env_variables(new_tokens):
+    """
+    update tokens in .env file after generation new
+    :param new_tokens:
+    :return:
+    """
     env_file = ".env"
     lines = []
 
@@ -237,6 +269,10 @@ def update_env_variables(new_tokens):
 
 
 def get_access_token():
+    """
+    update ghl authorization tokens using api
+    :return:
+    """
     url = "https://services.leadconnectorhq.com/oauth/token"
     response = requests.post(
         url,
@@ -248,13 +284,16 @@ def get_access_token():
         },
     )
     data = response.json()
-    print(response.status_code)
     print(response.json())
     new_tokens = {"ACCESS_TOKEN": data["access_token"], "REFRESH_TOKEN": data["refresh_token"]}
     return new_tokens
 
 
 def fetch_all_contacts():
+    """
+    get all contacts from ghl
+    :return:
+    """
     url = "https://services.leadconnectorhq.com/contacts/"
     # url = "https://rest.gohighlevel.com/v1/contacts/"
     headers = {
@@ -286,7 +325,6 @@ def fetch_all_contacts():
         json_file.write(json_string)
 
 
-def main_data_setup():
+def tokens_update():
     new_tokens = get_access_token()
     update_env_variables(new_tokens)
-    fetch_all_contacts()

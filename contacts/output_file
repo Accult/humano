@@ -18,7 +18,7 @@
         "postalCode": null,
         "address1": null,
         "dateAdded": "2024-04-26T08:14:12.913Z",
-        "dateUpdated": "2024-04-26T14:00:45.021Z",
+        "dateUpdated": "2024-04-29T09:50:37.026Z",
         "dateOfBirth": null,
         "businessId": null,
         "tags": [],
@@ -33,12 +33,17 @@
                 "medium": "manual"
             }
         ],
-        "customFields": [],
+        "customFields": [
+            {
+                "id": "JYRQ0OuVOhD3Pc0XTAbH",
+                "value": 4
+            }
+        ],
         "telnyx_sent": true,
-        "telnyx_sent_at": "2024-04-29 11:08:51",
-        "telnyx_message_id": "40318f28-e646-4795-8aeb-729ade8c9257",
+        "telnyx_sent_at": "2024-04-29 13:17:42",
+        "telnyx_message_id": "40318f29-5c3f-4689-aa8a-4f41c6d49178",
         "ghl_sent": true,
-        "ghl_sent_at": "2024-04-29 11:08:52",
+        "ghl_sent_at": "2024-04-29 13:17:43",
         "ghl_conversation_id": "J7hhLbdzZze6NkiKIEUx"
     },
     {
@@ -77,10 +82,10 @@
         ],
         "customFields": [],
         "telnyx_sent": true,
-        "telnyx_sent_at": "2024-04-29 11:08:52",
-        "telnyx_message_id": "40318f28-e64c-47e2-979c-a519ad7d713e",
+        "telnyx_sent_at": "2024-04-29 13:17:44",
+        "telnyx_message_id": "40318f29-5c45-46df-aea9-ac0279a20273",
         "ghl_sent": true,
-        "ghl_sent_at": "2024-04-29 11:08:53",
+        "ghl_sent_at": "2024-04-29 13:17:45",
         "ghl_conversation_id": "69IG6CqMOZL3RLhfjPrc"
     },
     {
@@ -161,10 +166,10 @@
         ],
         "customFields": [],
         "telnyx_sent": true,
-        "telnyx_sent_at": "2024-04-29 11:08:54",
-        "telnyx_message_id": "40318f28-e652-4ee6-920c-24d8f37ffb07",
+        "telnyx_sent_at": "2024-04-29 13:17:46",
+        "telnyx_message_id": "40318f29-5c4c-4bb2-8c73-5f85496286e3",
         "ghl_sent": true,
-        "ghl_sent_at": "2024-04-29 11:08:55",
+        "ghl_sent_at": "2024-04-29 13:17:47",
         "ghl_conversation_id": "Ws3xuSwpSkk0nCk3Acf6"
     }
 ]

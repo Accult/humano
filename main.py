@@ -1,4 +1,4 @@
-import ghl_api as update_token
+import ghl_api
 import telnyx_api as send_message
 
 input_file = "contacts/data.json"
@@ -6,7 +6,8 @@ output_file = "contacts/output_file"
 
 
 def main():
-    update_token.main_data_setup()
+    ghl_api.tokens_update()
+    ghl_api.fetch_all_contacts()
     send_message.main(input_file, output_file)
 
 

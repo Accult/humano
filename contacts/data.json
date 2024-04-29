@@ -18,7 +18,7 @@
         "postalCode": null,
         "address1": null,
         "dateAdded": "2024-04-26T08:14:12.913Z",
-        "dateUpdated": "2024-04-26T14:00:45.021Z",
+        "dateUpdated": "2024-04-29T09:50:37.026Z",
         "dateOfBirth": null,
         "businessId": null,
         "tags": [],
@@ -33,7 +33,12 @@
                 "medium": "manual"
             }
         ],
-        "customFields": []
+        "customFields": [
+            {
+                "id": "JYRQ0OuVOhD3Pc0XTAbH",
+                "value": 4
+            }
+        ]
     },
     {
         "id": "nVknmDXuE7IbkHgdh5O5",
