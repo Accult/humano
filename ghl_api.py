@@ -121,7 +121,7 @@ def add_inbound_message(ghl_conversation_id, message_text):
     except Exception as ex:
         logger.error(f"{add_inbound_message.__name__} -- !!! GHL ERROR - {ex}")
 
-    return result
+    return result, ghl_conversation_id
 
 
 def modify_ghl_conversation(contact_id, sms_message):
@@ -138,7 +138,8 @@ def modify_ghl_conversation(contact_id, sms_message):
     if get_conversation_response["success"] is True:
         conversation_id = get_conversation_response["conversation_id"]
 
-        return True if add_inbound_message(conversation_id, sms_message) is True else False
+        # return True if add_inbound_message(conversation_id, sms_message) is True else False
+        return add_inbound_message(conversation_id, sms_message)
 
     else:
         create_conversation_response = create_conversation(contact_id)
@@ -147,7 +148,8 @@ def modify_ghl_conversation(contact_id, sms_message):
         if create_conversation_response["success"] is True:
             conversation_id = create_conversation_response["conversation_id"]
 
-            return True if add_inbound_message(conversation_id, sms_message) is True else False
+            # return True if add_inbound_message(conversation_id, sms_message) is True else False
+            return add_inbound_message(conversation_id, sms_message)
 
 
 def set_ghl_sms_blast_status(contact_id: str, status: str):

@@ -1,12 +1,12 @@
 [
     {
-        "id": "1oDVofm7rAPBgNfgcp0L",
+        "id": "dJ3pKDfnEJhEOFJULvhs",
         "locationId": "Yj0B8PqpPjBZBwD91Lgq",
-        "contactName": "smth smth",
-        "firstName": "smth",
-        "lastName": "smth",
+        "contactName": "anna krush",
+        "firstName": "anna",
+        "lastName": "krush",
         "companyName": null,
-        "email": "kkllk@example.com",
+        "email": "info@humanoco.com",
         "phone": null,
         "dnd": false,
         "dndSettings": {},
@@ -17,8 +17,8 @@
         "state": null,
         "postalCode": null,
         "address1": null,
-        "dateAdded": "2024-04-26T08:14:12.913Z",
-        "dateUpdated": "2024-04-26T08:14:12.913Z",
+        "dateAdded": "2024-04-25T10:40:46.878Z",
+        "dateUpdated": "2024-04-29T08:07:29.176Z",
         "dateOfBirth": null,
         "businessId": null,
         "tags": [],
@@ -29,8 +29,8 @@
         "attributions": [
             {
                 "utmSessionSource": "CRM UI",
-                "medium": "manual",
-                "isFirst": true
+                "isFirst": true,
+                "medium": "manual"
             }
         ],
         "customFields": [],
@@ -38,6 +38,7 @@
         "telnyx_sent_at": 0,
         "telnyx_message_id": null,
         "ghl_sent": false,
-        "ghl_sent_at": 0
+        "ghl_sent_at": 0,
+        "ghl_conversation_id": null
     }
 ]

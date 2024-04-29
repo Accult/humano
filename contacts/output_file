@@ -7,7 +7,7 @@
         "lastName": "smth",
         "companyName": null,
         "email": "kkllk@example.com",
-        "phone": null,
+        "phone": "+19097688030",
         "dnd": false,
         "dndSettings": {},
         "type": "lead",
@@ -18,7 +18,7 @@
         "postalCode": null,
         "address1": null,
         "dateAdded": "2024-04-26T08:14:12.913Z",
-        "dateUpdated": "2024-04-26T08:14:12.913Z",
+        "dateUpdated": "2024-04-26T14:00:45.021Z",
         "dateOfBirth": null,
         "businessId": null,
         "tags": [],
@@ -29,16 +29,17 @@
         "attributions": [
             {
                 "utmSessionSource": "CRM UI",
-                "medium": "manual",
-                "isFirst": true
+                "isFirst": true,
+                "medium": "manual"
             }
         ],
         "customFields": [],
-        "telnyx_sent": false,
-        "telnyx_sent_at": 0,
-        "telnyx_message_id": null,
-        "ghl_sent": false,
-        "ghl_sent_at": 0
+        "telnyx_sent": true,
+        "telnyx_sent_at": "2024-04-29 11:08:51",
+        "telnyx_message_id": "40318f28-e646-4795-8aeb-729ade8c9257",
+        "ghl_sent": true,
+        "ghl_sent_at": "2024-04-29 11:08:52",
+        "ghl_conversation_id": "J7hhLbdzZze6NkiKIEUx"
     },
     {
         "id": "nVknmDXuE7IbkHgdh5O5",
@@ -76,10 +77,11 @@
         ],
         "customFields": [],
         "telnyx_sent": true,
-        "telnyx_sent_at": "2024-04-26 11:14:23",
-        "telnyx_message_id": "40318f19-7844-4e85-a05c-ed133cb1b2ba",
+        "telnyx_sent_at": "2024-04-29 11:08:52",
+        "telnyx_message_id": "40318f28-e64c-47e2-979c-a519ad7d713e",
         "ghl_sent": true,
-        "ghl_sent_at": "2024-04-26 11:14:24"
+        "ghl_sent_at": "2024-04-29 11:08:53",
+        "ghl_conversation_id": "69IG6CqMOZL3RLhfjPrc"
     },
     {
         "id": "dJ3pKDfnEJhEOFJULvhs",
@@ -89,7 +91,7 @@
         "lastName": "krush",
         "companyName": null,
         "email": "info@humanoco.com",
-        "phone": "+18449000770",
+        "phone": null,
         "dnd": false,
         "dndSettings": {},
         "type": "lead",
@@ -100,7 +102,7 @@
         "postalCode": null,
         "address1": null,
         "dateAdded": "2024-04-25T10:40:46.878Z",
-        "dateUpdated": "2024-04-25T10:40:46.878Z",
+        "dateUpdated": "2024-04-29T08:07:29.176Z",
         "dateOfBirth": null,
         "businessId": null,
         "tags": [],
@@ -111,16 +113,17 @@
         "attributions": [
             {
                 "utmSessionSource": "CRM UI",
-                "medium": "manual",
-                "isFirst": true
+                "isFirst": true,
+                "medium": "manual"
             }
         ],
         "customFields": [],
-        "telnyx_sent": true,
-        "telnyx_sent_at": "2024-04-26 11:14:25",
-        "telnyx_message_id": "40318f19-784b-4060-9325-e8e3900abbfc",
-        "ghl_sent": true,
-        "ghl_sent_at": "2024-04-26 11:14:26"
+        "telnyx_sent": false,
+        "telnyx_sent_at": 0,
+        "telnyx_message_id": null,
+        "ghl_sent": false,
+        "ghl_sent_at": 0,
+        "ghl_conversation_id": null
     },
     {
         "id": "qgptsVHCfguGnBub8GLk",
@@ -158,9 +161,10 @@
         ],
         "customFields": [],
         "telnyx_sent": true,
-        "telnyx_sent_at": "2024-04-26 11:14:26",
-        "telnyx_message_id": "40318f19-7850-4c19-9735-52feb4312ffc",
+        "telnyx_sent_at": "2024-04-29 11:08:54",
+        "telnyx_message_id": "40318f28-e652-4ee6-920c-24d8f37ffb07",
         "ghl_sent": true,
-        "ghl_sent_at": "2024-04-26 11:14:27"
+        "ghl_sent_at": "2024-04-29 11:08:55",
+        "ghl_conversation_id": "Ws3xuSwpSkk0nCk3Acf6"
     }
 ]

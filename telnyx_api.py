@@ -49,7 +49,7 @@ def check_telnyx_delivery_status(message_id):
     except Exception as ex:
         logger.error(f"{check_telnyx_delivery_status.__name__} -- !!! TELNYX ERROR -- {ex}")
 
-    return True if delivery_status == "delivered" else False
+    return True if delivery_status == "delivered" else False, response.json()
 
 
 def send_telnyx_sms(phone_number, sms_message: str, from_number):
@@ -92,6 +92,7 @@ def update_contacts(input_file):
         contact["telnyx_message_id"] = None
         contact["ghl_sent"] = False
         contact["ghl_sent_at"] = 0
+        contact["ghl_conversation_id"] = None
     return data
 
 
@@ -123,7 +124,8 @@ def format_message(contact_name):
 #     except Exception as ex:
 #         logger.error(f"{check_telnyx_delivery_status.__name__} -- !!! TELNYX ERROR -- {ex}")
 #
-#     return True if delivery_status == "delivered" else False
+#     # return True if delivery_status == "delivered" else False
+#     return response.json()
 
 
 def main(input_file, output_file):
@@ -143,11 +145,12 @@ def main(input_file, output_file):
             contact["telnyx_sent_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             contact["telnyx_message_id"] = message_id
 
-            ghl_sent_status = ghl_api.modify_ghl_conversation(contact_id, msg)
+            ghl_sent_status, ghl_conversation_id = ghl_api.modify_ghl_conversation(contact_id, msg)
 
             if ghl_sent_status:
                 contact["ghl_sent"] = True
                 contact["ghl_sent_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                contact["ghl_conversation_id"] = ghl_conversation_id
 
             with open(output_file, "w") as f:
                 json.dump(raw_data, f, indent=4)
@@ -161,4 +164,6 @@ def main(input_file, output_file):
 
 
 if __name__ == "__main__":
-    main("contacts/data.json", "contacts/output_file")
+    # main("contacts/data.json", "contacts/output_file")
+
+    check_telnyx_delivery_status("40318f1a-b5a4-4515-8a01-dd85c7b23a46")

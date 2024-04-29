@@ -7,7 +7,7 @@
         "lastName": "smth",
         "companyName": null,
         "email": "kkllk@example.com",
-        "phone": null,
+        "phone": "+19097688030",
         "dnd": false,
         "dndSettings": {},
         "type": "lead",
@@ -18,7 +18,7 @@
         "postalCode": null,
         "address1": null,
         "dateAdded": "2024-04-26T08:14:12.913Z",
-        "dateUpdated": "2024-04-26T08:14:12.913Z",
+        "dateUpdated": "2024-04-26T14:00:45.021Z",
         "dateOfBirth": null,
         "businessId": null,
         "tags": [],
@@ -29,8 +29,8 @@
         "attributions": [
             {
                 "utmSessionSource": "CRM UI",
-                "medium": "manual",
-                "isFirst": true
+                "isFirst": true,
+                "medium": "manual"
             }
         ],
         "customFields": []
@@ -79,7 +79,7 @@
         "lastName": "krush",
         "companyName": null,
         "email": "info@humanoco.com",
-        "phone": "+18449000770",
+        "phone": null,
         "dnd": false,
         "dndSettings": {},
         "type": "lead",
@@ -90,7 +90,7 @@
         "postalCode": null,
         "address1": null,
         "dateAdded": "2024-04-25T10:40:46.878Z",
-        "dateUpdated": "2024-04-25T10:40:46.878Z",
+        "dateUpdated": "2024-04-29T08:07:29.176Z",
         "dateOfBirth": null,
         "businessId": null,
         "tags": [],
@@ -101,8 +101,8 @@
         "attributions": [
             {
                 "utmSessionSource": "CRM UI",
-                "medium": "manual",
-                "isFirst": true
+                "isFirst": true,
+                "medium": "manual"
             }
         ],
         "customFields": []
