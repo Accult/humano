@@ -2,7 +2,7 @@ import ghl_api
 import telnyx_api as send_message
 
 input_file = "contacts/data.json"
-output_file = "contacts/output_file"
+output_file = "contacts/processed_data.json"
 
 
 def main():

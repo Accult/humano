@@ -55,11 +55,12 @@ def webhook():
     ghl_api.tokens_update()
     ghl_contact_id = ghl_api.get_contact_by_number(sender_phone)
     if ghl_contact_id:
-        ghl_api.modify_ghl_conversation(ghl_contact_id, message, "outbound")
+        ghl_api.modify_ghl_conversation(ghl_contact_id, message, "inbound")
         return "OK", 200
 
     return "ERROR"
 
 
+# webhook()
 if __name__ == "__main__":
     app.run(debug=True)

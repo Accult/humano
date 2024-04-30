@@ -27,6 +27,14 @@ load_dotenv()
 API_KEY = os.getenv("TELNYX_API_KEY")
 PUBLIC_KEY = os.getenv("TELNYX_PUBLIC_KEY")
 failed_contacts = []
+phone_numbers = ["+19099221711", "+19097688545", "+19097688030", "+19097688020", "+19096796336"]
+
+
+def phone_number_generator(phone_numbers):
+    index = 0
+    while True:
+        yield phone_numbers[index]
+        index = (index + 1) % len(phone_numbers)
 
 
 def check_telnyx_delivery_status(message_id):
@@ -129,7 +137,10 @@ def format_message(contact_name):
 
 
 def main(input_file, output_file):
+    phone_number_iterator = phone_number_generator(phone_numbers)
     raw_data = update_contacts(input_file)
+    initial_contacts_count = len(raw_data)
+    processed_contacts_count = 0
 
     with open(output_file, "w") as f:
         json.dump(raw_data, f, indent=4)
@@ -139,7 +150,8 @@ def main(input_file, output_file):
         contact_name = contact.get("firstName", "")
         contact_phone = contact.get("phone")
         msg = format_message(contact_name)
-        telnyx_sent_status, message_id = send_telnyx_sms(contact_phone, msg, "+19099221711")
+        from_phone_number = next(phone_number_iterator)
+        telnyx_sent_status, message_id = send_telnyx_sms(contact_phone, msg, from_phone_number)
         if telnyx_sent_status:
             contact["telnyx_sent"] = True
             contact["telnyx_sent_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -152,6 +164,7 @@ def main(input_file, output_file):
                 contact["ghl_sent_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 contact["ghl_conversation_id"] = ghl_conversation_id
 
+            processed_contacts_count += 1
             with open(output_file, "w") as f:
                 json.dump(raw_data, f, indent=4)
                 logger.info(f"{main.__name__} -- DATA DUMPED SUCCESSFULLY")
@@ -159,8 +172,16 @@ def main(input_file, output_file):
         else:
             failed_contacts.append(contact)
 
-    with open("contacts/failed_contact", "w") as f:
+    with open("contacts/failed_contact.json", "w") as f:
         json.dump(failed_contacts, f, indent=4)
+
+    end_info = {
+        "initial_contacts_count": initial_contacts_count,
+        "processed_contacts_count": processed_contacts_count,
+        "failed_contacts_count": len(failed_contacts),
+    }
+    with open("contacts/processing_info.json", "w") as f:
+        json.dump(end_info, f, indent=4)
 
 
 if __name__ == "__main__":
