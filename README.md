@@ -1,5 +1,3 @@
-Звичайно, ось англомовна версія README файлу:
-
 # Sms machine
 
 
@@ -18,7 +16,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-This will set up the virtual environment, install required packages, create the `.env` using .env-example template
+This will set up the virtual environment, now create the `.env` using .env-example template
 
 3. After completing the setup, you can run the main script to start sending messages to contacts:
 
