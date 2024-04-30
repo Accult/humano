@@ -4,12 +4,14 @@ import json
 import requests
 from dotenv import load_dotenv
 
-from logging_config import logger
+# from logging_config import logger
+import logging
 from datetime import datetime
 import utils.utils as utils
 import ghl_api
 
 load_dotenv()
+logger = logging.getLogger("ghl_logger")
 
 # [{"message": "",
 # "telnyx_sent": false,

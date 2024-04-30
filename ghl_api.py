@@ -1,10 +1,13 @@
 import requests
 import json
 from dotenv import load_dotenv
-from logging_config import logger
+
+# from logging_config import logger
+import logging
 import os
 import time
 
+logger = logging.getLogger("ghl_logger")
 load_dotenv()
 
 CLIENT_ID = os.getenv("CLIENT_ID")
@@ -15,6 +18,11 @@ TOKEN = os.getenv("ACCESS_TOKEN")
 api_version = "2021-07-28"
 API_KEY = os.getenv("API_KEY")
 limit_amount_of_users = 100
+
+
+def set_logger(logger_instance):
+    global logger
+    logger = logger_instance
 
 
 def get_contact_by_number(phone_number):

@@ -1,5 +1,6 @@
 from flask import Flask, request
 import ghl_api
+from logging_config import setup_logger
 
 app = Flask(__name__)
 
@@ -50,8 +51,8 @@ def webhook():
     #     }
     # ]
 
-    sender_phone = data[0]["data"]["payload"]["from"]["phone_number"]
-    message = data[0]["data"]["payload"]["text"]
+    sender_phone = data["data"]["payload"]["from"]["phone_number"]
+    message = data["data"]["payload"]["text"]
     ghl_api.tokens_update()
     ghl_contact_id = ghl_api.get_contact_by_number(sender_phone)
     if ghl_contact_id:
@@ -61,6 +62,7 @@ def webhook():
     return "ERROR"
 
 
-# webhook()
 if __name__ == "__main__":
-    app.run(debug=True)
+    logger = setup_logger("webhook_logger", "logs/webhook_receiver.log")
+    ghl_api.set_logger(logger)
+    app.run(debug=True, port=5000, host="0.0.0.0")
